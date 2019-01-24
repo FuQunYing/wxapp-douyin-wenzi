@@ -1,0 +1,105 @@
+/**app.wxss**/
+page{
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 50rpx;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+}
+.control-b{
+  transition: all .5s linear;
+  margin-bottom: 300rpx;
+  transform: scale(1.2);
+  /* margin-left: -300px; */
+}
+.control-c{
+  transition: all .5s linear;
+  margin-bottom: 300rpx;
+  transform: scale(1);
+  /* margin-right: -300px; */
+}
+
+.rotate-left{
+  transition: all .2s linear;
+  transform-origin: center;
+  transform: rotate(-90deg)  translate(20%,-50%);
+  /* float: left; */
+  margin-left: -300rpx;
+}
+.rotate-right{
+  transition: all .2s linear;
+  transform-origin: center;
+  transform: rotate(90deg)  translate(30%,-50%);
+  /* float: right; */
+  margin-right: -300rpx;
+}
+.left {
+  transform-origin: left bottom;
+  animation: toleft .2s linear 1;
+}
+.right {
+  transform-origin: right bottom;
+  animation: toright .2s linear 1;
+}
+.fadein{
+  animation: in 1s linear 1;
+}
+.fadeout{
+  animation: out 1s linear 1;
+}
+/* .up{
+  animation: updown 1s linear 1;
+} */
+@keyframes in {
+  0% {
+    opacity: 0.4
+  }25%{
+    opacity: 0.6
+  }50%{
+    opacity: 0.8
+  }
+  100%{
+    opacity: 1
+  }
+}
+@keyframes out {
+  0% {
+    opacity: 1
+  }25%{
+    opacity: 0.8
+  }50%{
+    opacity: 0.6
+  }
+  100%{
+    opacity: 0.4
+  }
+}
+@keyframes updown {
+  0% {
+    transform: translateX(0)
+  }100%{
+    transform: translateX(10px)
+  }
+}
+@keyframes toright {
+  0% {
+    transform: rotate(-90deg)
+  } 100% {
+    transform: rotate(0deg)
+  }
+}
+@keyframes toleft {
+  0% {
+    transform: rotate(90deg)
+  } 100% {
+    transform: rotate(0deg)
+  }
+}

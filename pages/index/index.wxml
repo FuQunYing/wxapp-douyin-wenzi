@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+<!-- 所以只能在这个外面，进行两段的包裹 -->
+<view class="{{chblock ? 'control-b':'control-c'}}">
+<!-- 这里是根据list的长度循环出来的，所以一开始就把外层的循环结束了 -->
+  <view wx:for="{{list}}" wx:for-item="out" wx:for-index="idx" wx:key="{{idx}}" class="{{out.addClass ? out.class : ''}} {{out.isCurrent && !out.addClass?out.curclass:''}}" >
+    <view wx:if="{{out.isshow}}" class="{{out.isshow ? 'fadein': 'fadeout'}}" style="color:{{out.color}};" >
+    <!-- 这里是文字的循环，与外层没有关系，有index可用 -->
+      <view  wx:for="{{out.txt}}" wx:for-index="index" wx:key="{{index}}" style="{{index === out.current ? out.scale : ''}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>
+</view>
